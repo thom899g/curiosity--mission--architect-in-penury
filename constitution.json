@@ -1,0 +1,37 @@
+{
+    "version": "1.0",
+    "immutable_rules": {
+        "max_capital_risk_per_episode": 0.02,
+        "min_evidence_confidence": 0.15,
+        "survival_threshold": -0.01,
+        "modification_cooloff_hours": 24,
+        "required_test_coverage": 0.95,
+        "hardware_fund_lock": true,
+        "telegram_emergency_threshold_usd": 1000.0
+    },
+    "amendment_process": {
+        "requires": ["unanimous_internal_vote", "external_human_approval"],
+        "quorum": 1.0,
+        "notification_protocol": "telegram_emergency"
+    },
+    "default_adversarial_profiles": [
+        {
+            "type": "liquidity_predator",
+            "description": "Detects and front-runs predictable patterns",
+            "aggression": 0.7,
+            "latency_advantage_ms": 5
+        },
+        {
+            "type": "noise_injector",
+            "description": "Creates false signals to mislead",
+            "aggression": 0.5,
+            "false_signal_strength": 0.3
+        },
+        {
+            "type": "latency_arbitrageur",
+            "description": "Exploits timing delays",
+            "aggression": 0.6,
+            "max_latency_exploit_ms": 20
+        }
+    ]
+}
